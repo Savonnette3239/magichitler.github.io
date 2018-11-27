@@ -9,6 +9,40 @@
     font-family: 'noice';
 }
 
+bold {
+    font-weight: 550;
+}
+
+t2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.boxlink {
+    width: 500px;
+}
+
+.no-underline {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.box {
+    border: 2px solid #DF9A85;
+    padding: 10px;
+    margin: 10px;
+    width: 700px;
+    font-size: 20px;
+}
+
+.box:hover {
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 40px;
+}
+
 h1,
 h2 {
     text-decoration: underline;
@@ -24,8 +58,7 @@ body {
     position: relative;
 }
 
-.underline
-{
+.underline {
     text-decoration: underline;
 }
 
