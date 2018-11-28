@@ -3,6 +3,41 @@
     src: url('fonts/Madeleina\ Sans.otf');
 }
 
+td {
+    border: 1px solid #DF9A85;
+    padding: 10px 15px;
+}
+
+hr {
+    color: #e07453
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.tableau1 {
+    background-color: #DF9A85;
+}
+
+
+.col1:hover {
+    background: #6d38288d
+}
+.col2:hover {
+    background: #6d38288d
+}
+.col3:hover {
+    background: #6d38288d
+}
+.col4:hover {
+    background: #6d38288d
+}
+.tableau1:hover {
+    background: #f1714a;
+}
+
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -20,22 +55,42 @@
     display: block;
 }
 
-.dropdown:hover .dropdown-child {
-    position: fixed; /* Sit on top of the page content */
-    display: block;
-    background-color: rgba(0,0,0,0.75); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
+.dropdown:hover .dropdown-1 {
+    background-color: #DF9A85;
 }
 
-.dropdown-child:hover {
+.dropdown:hover .dropdown-1:hover {
     background-color: #e07453;
+}
+
+.dropdown:hover .dropdown-2:hover {
+    background-color: #e07453;
+}
+
+.dropdown:hover .dropdown-3:hover {
+    background-color: #e07453;
+}
+
+.dropdown:hover .dropdown-4:hover {
+    background-color: #e07453;
+}
+
+.dropdown:hover .dropdown-child {
+    position: fixed;
+    /* Sit on top of the page content */
+    display: block;
+    background-color: rgba(0, 0, 0, 0.75);
+    /* Black background with opacity */
+    z-index: 2;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
 }
 
 * {
     text-align-last: left;
-    color: lightgray;
     font-family: 'noice';
+    color: lightgoldenrodyellow;
 }
 
 bold {
@@ -54,6 +109,20 @@ t2 {
 .no-underline {
     font-size: 20px;
     text-decoration: none;
+}
+
+.box-normalmouse {
+    background-color: rgba(15, 10, 10, 10);
+    border: 2px solid #e07453;
+    padding: 10px;
+    margin: 10px;
+    width: 700px;
+    font-size: 20px;
+}
+
+code {
+    font-family: sans-serif;
+    color: #DF9A85;
 }
 
 .box {
