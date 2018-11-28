@@ -3,6 +3,35 @@
     src: url('fonts/Madeleina\ Sans.otf');
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-child {
+    display: none;
+    min-width: 50px;
+}
+
+.dropdown-child a {
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-child {
+    position: fixed; /* Sit on top of the page content */
+    display: block;
+    background-color: rgba(0,0,0,0.75); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.dropdown-child:hover {
+    background-color: #e07453;
+}
+
 * {
     text-align-last: left;
     color: lightgray;
@@ -81,6 +110,7 @@ li a {
     text-decoration: none;
 }
 
+/* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: #e07453;
 }
