@@ -12,29 +12,38 @@ hr {
     color: #e07453
 }
 
+td {
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
 table {
     border-collapse: collapse;
 }
+
 
 .tableau1 {
     background-color: #DF9A85;
 }
 
-
 .col1:hover {
     background: #6d38288d
 }
+
 .col2:hover {
     background: #6d38288d
 }
+
 .col3:hover {
     background: #6d38288d
 }
+
 .col4:hover {
     background: #6d38288d
 }
+
 .tableau1:hover {
-    background: #f1714a;
+    background: rgb(105, 72, 62);
 }
 
 
@@ -113,7 +122,7 @@ t2 {
 
 .box-normalmouse {
     background-color: rgba(15, 10, 10, 10);
-    border: 2px solid #e07453;
+    border: 2px solid #6d38288d;
     padding: 10px;
     margin: 10px;
     width: 700px;

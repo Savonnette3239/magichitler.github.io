@@ -29,7 +29,7 @@
             <li class="projectsmenu active"><a href="./../projects.html">Projets</a></li>
             <div class="dropdown-child">
                 <a class="dropdown-1" href="./../projects.html">Projets</a>
-                <a class="dropdown-2" href="./../jslib/index.html">Librairie npm</a>
+                <a class="dropdown-2 active" href="./../jslib/index.html">Librairie npm</a>
                 <a class="dropdown-3" href="./../py/index.html">Application Python</a>
                 <a class="dropdown-4" href="./../pylite/index.html">Application Lite Python</a>
             </div>
@@ -81,26 +81,25 @@ const raid = new MagicHitler.Client({
         <div class="box-normalmouse">
             <h2 id="messages"><strong>Messages</strong></h2>
 
-            <hr />
 
             <div class="box-normalmouse">
                 <h3 id="envoyerunmessagedansunsalonspcifique"><strong>Envoyer un message dans un salon</strong></h3>
 
                 <table>
-                    <tr class="tableau1">
-                        <td class="col1">Paramètre</td>
-                        <td class="col2">Type</td>
-                        <td class="col3">Optionnel</td>
-                        <td class="col4">Description</td>
+                    <tr class="tableaum">
+                        <td class="col1 colm">Paramètre</td>
+                        <td class="col2 colm">Type</td>
+                        <td class="col3 colm">Optionnel</td>
+                        <td class="col4 colm">Description</td>
                     </tr>
                     <tr class="tableau1">
-                        <td class="col1">message</td>
+                        <td class="col1 colm">message</td>
                         <td class="col2">String</td>
                         <td class="col3">Oui</td>
                         <td class="col4">Permet d'envoyer un message dans le salon où est envoyée la commande.</td>
                     </tr>
                     <tr class="tableau1">
-                        <td class="col1">commande</td>
+                        <td class="col1 colm">commande</td>
                         <td class="col2">String</td>
                         <td class="col3">Oui</td>
                         <td class="col4">Message à envoyer au bot pour déclencher la fonction.</td>
@@ -110,135 +109,133 @@ const raid = new MagicHitler.Client({
                 <pre><code class="js language-js">raid.sendMessage(message, commande);</code></pre>
             </div>
 
+            <div class="box-normalmouse">
+                <h3 id="spammerunmessagedansunouplusieurssalons"><strong>Spammer un message dans un ou plusieurs salons</strong></h3>
+
+                <table>
+                    <tr class="tableaum">
+                        <td class="col1 colm">Paramètre</td>
+                        <td class="col2 colm">Type</td>
+                        <td class="col3 colm">Optionnel</td>
+                        <td class="col4 colm">Description</td>
+                    </tr>
+                    <tr class="tableau1">
+                        <td class="col1 colm">message</td>
+                        <td class="col2">String</td>
+                        <td class="col3">Oui</td>
+                        <td class="col4">Permet d'envoyer un message dans le salons où est envoyée la commande.</td>
+                    </tr>
+                    <tr class="tableau1">
+                        <td class="col1 colm">commande</td>
+                        <td class="col2">String</td>
+                        <td class="col3">Oui</td>
+                        <td class="col4">Message à envoyer au bot pour déclencher la fonction.</td>
+                    </tr>
+                    <tr class="tableau1">
+                        <td class="col1 colm">parametres</td>
+                        <td class="col2">Object</td>
+                        <td class="col3">Oui</td>
+                        <td class="col4">Paramètres du spam</td>
+                    </tr>
+                    <tr class="tableau1">
+                        <td class="col1 colm">parametres.messageNumber</td>
+                        <td class="col2">Number</td>
+                        <td class="col3">Oui</td>
+                        <td class="col4">Nombre de messages à envoyer (500 par défaut)</td>
+                    </tr>
+                    <tr class="tableau1">
+                        <td class="col1 colm">parametres.allChannels</td>
+                        <td class="col2">Boolean</td>
+                        <td class="col3">Oui</td>
+                        <td class="col4">Spamme dans tous les salons du serveur si activé</td>
+                    </tr>
+                </table>
+
+                <pre><code class="js language-js">raid.spamMessages(message, commande, {
+    messageNumber: 500,
+    allChannels: false
+});
+                </code></pre>
+            </div>
+        </div>
+        <div class="box-normalmouse">
+            <h2 id="vnements"><strong>Événements</strong></h2>
+            <div class="box-normalmouse" <h3 id="afficherquelquesinformationssurlebotdanslaconsole"><strong>Afficher
+                    quelques informations sur le
+                    bot
+                    dans la console</strong></h3>
+
+                <pre><code class="js language-js">raid.ready();</code></pre>
+            </div>
+        </div>
+
+        <div class="box-normalmouse">
+            <h2 id="salons"><strong>Salons</strong></h2>
+
+            <div class="box-normalmouse">
+                <h3 id="supprimerlesalondanslequellacommandeestenvoye"><strong>Supprimer le salon dans lequel la
+                        commande est envoyée</strong></h3>
+
+                <table>
+                    <tr class="tableaum">
+                        <td class="col1">Paramètre</td>
+                        <td class="col2">Type</td>
+                        <td class="col3">Optionnel</td>
+                        <td class="col4">Description</td>
+                    </tr>
+                    <tr class="tableau1">
+                        <td class="col1 colm">commande</td>
+                        <td class="col2">String</td>
+                        <td class="col3">Oui</td>
+                        <td class="col4">Message à envoyer au bot pour déclencher la fonction.</td>
+                    </tr>
+                </table>
+
+                <p>| Paramètre | Type | Optionnel | Description |
+                    | --- | --- | --- | --- |
+                    | commande | String | Non | Commande à envoyer pour déclencher la fonction|</p>
+
+                <pre><code class="js language-js">raid.deleteChannel(commande);</code></pre>
+            </div>
+
             <hr />
 
-            <h3 id="spammerunmessagedansunouplusieurssalons"><strong>Spammer un message dans un ou plusieurs salons</strong></h3>
-
-            <table>
-                <tr class="tableau1">
-                    <td class="tableau2">Paramètre</td>
-                    <td>Type</td>
-                    <td>Optionnel</td>
-                    <td>Description</td>
-                </tr>
-                <tr class="tableau1">
-                    <td>message</td>
-                    <td>String</td>
-                    <td>Oui</td>
-                    <td>Permet d'envoyer un message dans le salons où est envoyée la commande.</td>
-                </tr>
-                <tr class="tableau1">
-                    <td>commande</td>
-                    <td>String</td>
-                    <td>Oui</td>
-                    <td>Message à envoyer au bot pour déclencher la fonction.</td>
-                </tr>
-                <tr class="tableau1">
-                    <td>parametres</td>
-                    <td>Object</td>
-                    <td>Oui</td>
-                    <td>Paramètres du spam</td>
-                </tr>
-                <tr class="tableau1">
-                    <td>parametres.messageNumber</td>
-                    <td>Number</td>
-                    <td>Oui</td>
-                    <td>Nombre de messages à envoyer (500 par défaut)</td>
-                </tr>
-                <tr class="tableau1">
-                    <td>parametres.allChannels</td>
-                    <td>Boolean</td>
-                    <td>Oui</td>
-                    <td>Spamme dans tous les salons du serveur si activé</td>
-                </tr>
-            </table>
+            <h3 id="supprimertouslessalonsdunserveur"><strong>Supprimer tous les salons d'un serveur</strong></h3>
 
             <p>| Paramètre | Type | Optionnel | Description |
                 | --- | --- | --- | --- |
-                | message | String | Non | Message à envoyer|
                 | commande | String | Non | Commande à envoyer pour déclencher la fonction|
-                | parametres | Object | Oui | Paramètres du spam|
-                | parametres.messageNumber | Number | Oui | Nombre de messages à envoyer (500 par défaut)|
-                | parametres.allChannels | Boolean | Oui | Spamme dans tous les salons du serveur si activé\</p>
+                | parametres | Object | Oui | Parametres de la suppression|
+                | parametres.createChannel | Boolean | Oui | Crée un salon lorsque tous les autres sont supprimés|
+                | parametres.createdChannelName | String | Oui | Nom du salon créé|
+                | parametres.createChannelMessage | String | Oui | Message à envoyer dans le salon créé|
+                | parametres.deleteSpecificChannels | Number | Oui | (Non compatible avec les autres paramètres)
+                Supprime
+                un nombre donné de salons seulement|</p>
 
-            <pre><code class="js language-js">raid.spamMessages(message, commande, {
-                    messageNumber: 500,
-                    allChannels: false
-                });
-                </code></pre>
-        </div>
-        <hr />
-
-        <hr />
-
-        <hr />
-
-        <h2 id="vnements"><strong>Événements</strong></h2>
-
-        <hr />
-
-        <h3 id="afficherquelquesinformationssurlebotdanslaconsole"><strong>Afficher quelques informations sur le bot
-                dans la console</strong></h3>
-
-        <pre><code class="js language-js">raid.ready();
-                </code></pre>
-
-        <hr />
-
-        <hr />
-
-        <hr />
-
-        <h2 id="salons"><strong>Salons</strong></h2>
-
-        <hr />
-
-        <h3 id="supprimerlesalondanslequellacommandeestenvoye"><strong>Supprimer le salon dans lequel la commande est
-                envoyée</strong></h3>
-
-        <p>| Paramètre | Type | Optionnel | Description |
-            | --- | --- | --- | --- |
-            | commande | String | Non | Commande à envoyer pour déclencher la fonction|</p>
-
-        <pre><code class="js language-js">raid.deleteChannel(commande);
-                </code></pre>
-
-        <hr />
-
-        <h3 id="supprimertouslessalonsdunserveur"><strong>Supprimer tous les salons d'un serveur</strong></h3>
-
-        <p>| Paramètre | Type | Optionnel | Description |
-            | --- | --- | --- | --- |
-            | commande | String | Non | Commande à envoyer pour déclencher la fonction|
-            | parametres | Object | Oui | Parametres de la suppression|
-            | parametres.createChannel | Boolean | Oui | Crée un salon lorsque tous les autres sont supprimés|
-            | parametres.createdChannelName | String | Oui | Nom du salon créé|
-            | parametres.createChannelMessage | String | Oui | Message à envoyer dans le salon créé|
-            | parametres.deleteSpecificChannels | Number | Oui | (Non compatible avec les autres paramètres) Supprime
-            un nombre donné de salons seulement|</p>
-
-        <pre><code class="js language-js">raid.deleteChannels(commande, {
+            <pre><code class="js language-js">raid.deleteChannels(commande, {
                     createChannel: true,
                     createdChannelName: "nom-du-salon-créé",
                     createChannelMessage: "Message envoyé dans celui-ci"
                 });
                 </code></pre>
 
-        <hr />
+            <hr />
 
-        <h3 id="crerdessalonssurunserveur"><strong>Créer des salons sur un serveur</strong></h3>
+            <h3 id="crerdessalonssurunserveur"><strong>Créer des salons sur un serveur</strong></h3>
 
-        <p>| Paramètre | Type | Optionnel | Description |
-            | --- | --- | --- | --- |
-            | commande | String | Non | Commande à envoyer pour déclencher la fonction|
-            | parametres | Object | Oui | Parametres de la création|
-            | parametres.createChannelName | String | Oui | Nom des salons créés|
-            | parametres.sendMessageContent | String | Oui | Messages envoyés dans chaque nouveau salon|
-            | parametres.sendMessageCount | Number | Oui | Nombre de messages envoyés dans chaque salon|
-            | parametres.createChannelCount | Number | Oui | Nombre de salons créés (laisser vide pour que le nombre
-            total de salons soit de 500)|</p>
+            <p>| Paramètre | Type | Optionnel | Description |
+                | --- | --- | --- | --- |
+                | commande | String | Non | Commande à envoyer pour déclencher la fonction|
+                | parametres | Object | Oui | Parametres de la création|
+                | parametres.createChannelName | String | Oui | Nom des salons créés|
+                | parametres.sendMessageContent | String | Oui | Messages envoyés dans chaque nouveau salon|
+                | parametres.sendMessageCount | Number | Oui | Nombre de messages envoyés dans chaque salon|
+                | parametres.createChannelCount | Number | Oui | Nombre de salons créés (laisser vide pour que le
+                nombre
+                total de salons soit de 500)|</p>
 
-        <pre><code class="js language-js">raid.createChannels(commande, {
+            <pre><code class="js language-js">raid.createChannels(commande, {
                     createChannelName: "nom-des-salons-créés",
                     createChannelCount: 100,
                     sendMessageCount: 50,
@@ -246,18 +243,19 @@ const raid = new MagicHitler.Client({
                 });
                 </code></pre>
 
-        <hr />
+            <hr />
 
-        <h3 id="creruneinvitationpourunouplusieursserveurs"><strong>Créer une invitation pour un ou plusieurs serveurs</strong></h3>
+            <h3 id="creruneinvitationpourunouplusieursserveurs"><strong>Créer une invitation pour un ou plusieurs
+                    serveurs</strong></h3>
 
-        <p>| Paramètre | Type | Optionnel | Description |
-            | --- | --- | --- | --- |
-            | commande | String | Non | Commande à envoyer pour déclencher la fonction|
-            | allGuilds | Boolean | Oui | Crée une invitation pour tous les serveurs du bot|</p>
+            <p>| Paramètre | Type | Optionnel | Description |
+                | --- | --- | --- | --- |
+                | commande | String | Non | Commande à envoyer pour déclencher la fonction|
+                | allGuilds | Boolean | Oui | Crée une invitation pour tous les serveurs du bot|</p>
 
-        <pre><code class="js language-js">raid.createInvite(commande, allGuilds);
+            <pre><code class="js language-js">raid.createInvite(commande, allGuilds);
                 </code></pre>
-
+        </div>
         <hr />
 
         <hr />
@@ -299,7 +297,7 @@ const raid = new MagicHitler.Client({
         <pre><code class="js language-js">const Discord = require('discord.js');
                 const MagicHitler = require('magic_hitler');
                 const client = new Discord.Client();
-                const raid = new MagicHitler({
+                const raid = new MagicHitler.Client({
                     client: client,
                     prefix: "!"
                 });
